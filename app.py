@@ -37,7 +37,12 @@ color:black !important;
 
 # ---------- HEADER ----------
 
-st.title("Estimate Hidden Procurement Savings")
+st.markdown("""
+<h1 style='line-height:1.2'>
+Estimate Hidden<br>
+Procurement <span style="color:#C9F1F7">Savings</span>
+</h1>
+""", unsafe_allow_html=True)
 
 st.markdown(
 "Answer a few simple questions to estimate potential procurement savings in **under 10 seconds**."
@@ -121,7 +126,13 @@ if st.button("Calculate Potential Savings"):
 
     st.divider()
 
-    st.markdown("### See How Magentic AI Agents Deliver Procurement Savings")
+    # ---------- CTA TEXT ----------
+
+    st.markdown("""
+<h3 style="white-space:nowrap">
+See How Magentic AI Agents Deliver Procurement <span style="color:#C9F1F7">Savings</span>
+</h3>
+""", unsafe_allow_html=True)
 
     # ---------- FINAL CTA ----------
 
