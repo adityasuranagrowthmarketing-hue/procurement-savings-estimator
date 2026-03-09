@@ -1,69 +1,40 @@
 import streamlit as st
 
-st.set_page_config(page_title="Procurement Savings Estimator", layout="centered")
+st.set_page_config(
+    page_title="Procurement Savings Estimator",
+    layout="centered",
+    initial_sidebar_state="collapsed"
+)
 
-# ---------- STYLE ----------
+# ---------- STYLE FIXES ----------
 
 st.markdown("""
 <style>
 
-/* Dark background */
-
-[data-testid="stAppViewContainer"]{
-background-color:#0E1117;
+/* Fix selectbox selected value text */
+[data-testid="stSelectbox"] div {
+    color: black !important;
 }
 
-/* Typography */
-
-html, body, p, div, span, label, li {
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-color:white;
+/* Fix selectbox placeholder text */
+[data-testid="stSelectbox"] input {
+    color: black !important;
 }
 
-h1,h2,h3,h4{
-color:white;
-}
-
-/* Fix dropdown text */
-
-div[data-baseweb="select"] span{
-color:black !important;
-}
-
-div[data-baseweb="select"] input{
-color:black !important;
-}
-
-/* Fix dropdown menu items */
-
-ul[role="listbox"] li{
-color:black !important;
-}
-
-/* Button styling */
-
+/* Fix button styling */
 .stButton > button {
-background-color:#C9F1F7 !important;
-color:black !important;
-border:none !important;
-padding:12px 26px !important;
-font-size:16px !important;
-font-weight:600 !important;
-border-radius:8px !important;
-cursor:pointer !important;
+    background-color:#C9F1F7 !important;
+    color:black !important;
+    font-weight:600;
+    border:none;
+    border-radius:8px;
+    padding:12px 26px;
+    font-size:16px;
 }
-
-/* Force button text black */
-
-.stButton > button * {
-color:black !important;
-}
-
-/* Prevent hover color change */
 
 .stButton > button:hover {
-background-color:#C9F1F7 !important;
-color:black !important;
+    background-color:#C9F1F7 !important;
+    color:black !important;
 }
 
 </style>
@@ -73,11 +44,9 @@ color:black !important;
 
 st.title("Estimate Hidden Procurement Savings")
 
-st.markdown("""
-<p style="font-size:16px; font-weight:500; margin-top:-10px;">
-Answer a few simple questions to estimate potential procurement savings in <b>under 10 seconds</b>.
-</p>
-""", unsafe_allow_html=True)
+st.markdown(
+"Answer a few simple questions to estimate potential procurement savings in **under 10 seconds**."
+)
 
 st.divider()
 
@@ -137,33 +106,29 @@ if st.button("Calculate Potential Savings"):
     low_range = savings * 0.85
     high_range = savings * 1.15
 
-# ---------- RESULTS ----------
+    # ---------- RESULTS ----------
 
     st.subheader("Estimated Annual Procurement Savings Opportunity")
 
-    st.markdown(f"""
-## £{savings:,.0f} Per Year
+    st.markdown(f"## £{savings:,.0f} per year")
 
-Estimated potential procurement savings based on supplier complexity and procurement process maturity.
-""")
-
-    st.markdown(f"""
-**Typical Range:** £{low_range:,.0f} – £{high_range:,.0f}
-""")
+    st.markdown(
+        f"Typical range: **£{low_range:,.0f} – £{high_range:,.0f}**"
+    )
 
     st.success(
-    "Procurement teams with similar supplier complexity frequently uncover multi-million pound savings during supplier contract audits."
+        "Procurement teams with similar supplier complexity frequently uncover multi-million pound savings during supplier contract audits."
     )
 
     st.info(
-    "Magentic's AI procurement agents analyse supplier contracts, invoices and ERP data to identify pricing inconsistencies, missed rebates and contract compliance gaps — helping procurement teams uncover hidden procurement savings."
+        "Magentic's AI procurement agents analyse supplier contracts, invoices and ERP data to detect pricing inconsistencies, missed rebates and contract compliance gaps."
     )
 
     st.divider()
 
     st.markdown("### Recover Hidden Procurement Savings With AI Agents")
 
-# ---------- FINAL CTA ----------
+    # ---------- FINAL CTA ----------
 
     st.markdown("""
 <div style="text-align:center;margin-top:25px;">
