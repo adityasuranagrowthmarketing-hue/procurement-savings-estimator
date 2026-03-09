@@ -6,27 +6,25 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ---------- STYLE ----------
+# ---------- BUTTON STYLE FIX ----------
 
 st.markdown("""
 <style>
 
-[data-testid="stAppViewContainer"]{
-background-color:#0E1117;
-}
+/* Make Streamlit buttons match Magentic style */
 
-html, body, p, div, span, label{
-color:white;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-}
-
-/* dropdown selected text */
-
-[data-testid="stSelectbox"] div{
+.stButton > button {
+background-color:#C9F1F7 !important;
 color:black !important;
+border:none !important;
+font-weight:600;
+padding:12px 26px;
+border-radius:8px;
+font-size:16px;
 }
 
-[data-testid="stSelectbox"] input{
+.stButton > button:hover {
+background-color:#C9F1F7 !important;
 color:black !important;
 }
 
@@ -67,11 +65,9 @@ automation = st.selectbox(
 
 st.divider()
 
-# ---------- CALCULATE CTA ----------
+# ---------- CALCULATE ----------
 
-calculate = st.button("Calculate Potential Savings")
-
-if calculate:
+if st.button("Calculate Potential Savings"):
 
     leakage_rate = 0.03
 
