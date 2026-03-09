@@ -6,12 +6,17 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ---------- BUTTON STYLE ----------
+# ---------- STYLE FIX ----------
 
 st.markdown("""
 <style>
 
-/* Match CTA style */
+/* Force selected dropdown value to black */
+div[data-baseweb="select"] > div {
+    color: black !important;
+}
+
+/* Button styling */
 .stButton > button {
 background-color:#C9F1F7 !important;
 color:black !important;
@@ -115,8 +120,6 @@ if st.button("Calculate Potential Savings"):
     )
 
     st.divider()
-
-    # ---------- UPDATED TEXT ----------
 
     st.markdown("### See How Magentic AI Agents Deliver Procurement Savings")
 
