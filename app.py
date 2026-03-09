@@ -6,22 +6,38 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ---------- STYLE FIXES ----------
+# ---------- STYLE ----------
 
 st.markdown("""
 <style>
 
-/* Fix selectbox selected value text */
+/* Dark background */
+
+[data-testid="stAppViewContainer"] {
+    background-color:#0E1117;
+}
+
+/* Make normal text white */
+
+html, body, p, div, span, label {
+    color:white;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+/* Fix dropdown selected value text */
+
 [data-testid="stSelectbox"] div {
-    color: black !important;
+    color:black !important;
 }
 
-/* Fix selectbox placeholder text */
+/* Fix placeholder text */
+
 [data-testid="stSelectbox"] input {
-    color: black !important;
+    color:black !important;
 }
 
-/* Fix button styling */
+/* Button style */
+
 .stButton > button {
     background-color:#C9F1F7 !important;
     color:black !important;
