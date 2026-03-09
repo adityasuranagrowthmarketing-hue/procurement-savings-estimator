@@ -6,26 +6,35 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ---------- BUTTON STYLE FIX ----------
+# ---------- STYLE FIXES ----------
 
 st.markdown("""
 <style>
 
-/* Make Streamlit buttons match Magentic style */
+/* Fix selectbox text when an item is selected */
+[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+    color: black !important;
+}
 
+/* Fix placeholder text */
+[data-testid="stSelectbox"] input {
+    color: black !important;
+}
+
+/* Style Streamlit buttons */
 .stButton > button {
-background-color:#C9F1F7 !important;
-color:black !important;
-border:none !important;
-font-weight:600;
-padding:12px 26px;
-border-radius:8px;
-font-size:16px;
+    background-color:#C9F1F7 !important;
+    color:black !important;
+    border:none !important;
+    font-weight:600;
+    padding:12px 26px;
+    border-radius:8px;
+    font-size:16px;
 }
 
 .stButton > button:hover {
-background-color:#C9F1F7 !important;
-color:black !important;
+    background-color:#C9F1F7 !important;
+    color:black !important;
 }
 
 </style>
