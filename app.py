@@ -7,7 +7,7 @@ st.set_page_config(page_title="Procurement Savings Estimator", layout="centered"
 st.markdown("""
 <style>
 
-/* Background */
+/* Dark background */
 
 [data-testid="stAppViewContainer"]{
 background-color:#0E1117;
@@ -24,13 +24,19 @@ h1,h2,h3,h4{
 color:white;
 }
 
-/* Fix selectbox text */
+/* Fix dropdown text */
 
-div[data-baseweb="select"] * {
+div[data-baseweb="select"] span{
 color:black !important;
 }
 
-ul[role="listbox"] * {
+div[data-baseweb="select"] input{
+color:black !important;
+}
+
+/* Fix dropdown menu items */
+
+ul[role="listbox"] li{
 color:black !important;
 }
 
@@ -47,24 +53,17 @@ border-radius:8px !important;
 cursor:pointer !important;
 }
 
-/* Ensure text inside button stays black */
+/* Force button text black */
 
 .stButton > button * {
 color:black !important;
 }
 
-/* Disable hover change */
+/* Prevent hover color change */
 
 .stButton > button:hover {
 background-color:#C9F1F7 !important;
 color:black !important;
-}
-
-/* Remove focus outline */
-
-.stButton > button:focus {
-outline:none;
-box-shadow:none;
 }
 
 </style>
