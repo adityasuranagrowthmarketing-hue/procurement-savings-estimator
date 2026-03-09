@@ -11,46 +11,23 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-/* Dark background */
-
-[data-testid="stAppViewContainer"] {
-    background-color:#0E1117;
+[data-testid="stAppViewContainer"]{
+background-color:#0E1117;
 }
 
-/* Make normal text white */
-
-html, body, p, div, span, label {
-    color:white;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+html, body, p, div, span, label{
+color:white;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 
-/* Fix dropdown selected value text */
+/* dropdown selected text */
 
-[data-testid="stSelectbox"] div {
-    color:black !important;
+[data-testid="stSelectbox"] div{
+color:black !important;
 }
 
-/* Fix placeholder text */
-
-[data-testid="stSelectbox"] input {
-    color:black !important;
-}
-
-/* Button style */
-
-.stButton > button {
-    background-color:#C9F1F7 !important;
-    color:black !important;
-    font-weight:600;
-    border:none;
-    border-radius:8px;
-    padding:12px 26px;
-    font-size:16px;
-}
-
-.stButton > button:hover {
-    background-color:#C9F1F7 !important;
-    color:black !important;
+[data-testid="stSelectbox"] input{
+color:black !important;
 }
 
 </style>
@@ -90,9 +67,11 @@ automation = st.selectbox(
 
 st.divider()
 
-# ---------- CALCULATE ----------
+# ---------- CALCULATE CTA ----------
 
-if st.button("Calculate Potential Savings"):
+calculate = st.button("Calculate Potential Savings")
+
+if calculate:
 
     leakage_rate = 0.03
 
